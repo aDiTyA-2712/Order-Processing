@@ -13,32 +13,32 @@ The **Order Processing System** is a backend service designed to handle order cr
 
 ## 🏗️ Project Structure
 
-ecommerce/                  # Main Django project
-│
-├── __pycache__/            # Python bytecode cache
-├── __init__.py             # Initialization file
-├── asgi.py                 # ASGI entry point for async deployment
-├── celery.py               # Celery configuration for async tasks
-├── settings.py             # Django settings (e.g., database, installed apps)
-├── urls.py                 # Project-wide URL routing
-├── wsgi.py                 # WSGI entry point for deployment
-│
-├── orders/                 # Django app for order management
-│   ├── __pycache__/        # Python bytecode cache
-│   ├── migrations/         # Database migrations
-│   ├── __init__.py         # Initialization file
-│   ├── admin.py            # Admin panel configuration
-│   ├── apps.py             # App configuration
-│   ├── models.py           # Order model (database schema)
-│   ├── serializers.py      # DRF serializers for API data formatting
-│   ├── tasks.py            # Celery tasks for background processing
-│   ├── tests.py            # Unit and integration tests
-│   ├── urls.py             # App-specific URL routing
-│   └── views.py            # API views (order processing, metrics)
-│
-├── locustfile.py           # Load testing script using Locust
-├── manage.py               # Django command-line utility
-└── README.md               # Documentation (you are here!)
+	ecommerce/                  # Main Django project
+	│
+	├── __pycache__/            # Python bytecode cache
+	├── __init__.py             # Initialization file
+	├── asgi.py                 # ASGI entry point for async deployment
+	├── celery.py               # Celery configuration for async tasks
+	├── settings.py             # Django settings (e.g., database, installed apps)
+	├── urls.py                 # Project-wide URL routing
+	├── wsgi.py                 # WSGI entry point for deployment
+	│
+	├── orders/                 # Django app for order management
+	│   ├── __pycache__/        # Python bytecode cache
+	│   ├── migrations/         # Database migrations
+	│   ├── __init__.py         # Initialization file
+	│   ├── admin.py            # Admin panel configuration
+	│   ├── apps.py             # App configuration
+	│   ├── models.py           # Order model (database schema)
+	│   ├── serializers.py      # DRF serializers for API data formatting
+	│   ├── tasks.py            # Celery tasks for background processing
+	│   ├── tests.py            # Unit and integration tests
+	│   ├── urls.py             # App-specific URL routing
+	│   └── views.py            # API views (order processing, metrics)
+	│
+	├── locustfile.py           # Load testing script using Locust
+	├── manage.py               # Django command-line utility
+	└── README.md               # Documentation (you are here!)
 
 ## ⚙️ Installation & Setup
 
@@ -61,9 +61,13 @@ ecommerce/                  # Main Django project
 - python manage.py runserver
 
 📌 API Endpoints
+
 1️⃣ Create an Order
+
 	~ Endpoint: curl -X POST http://127.0.0.1:8000/api/orders/create/ -H "Content-Type: application/json" -d '
+	
 	~ Request Body:
+	
 		{
 			"user_id": 645,
 			"order_id": "userTest23",
@@ -71,23 +75,30 @@ ecommerce/                  # Main Django project
 			"total_amount": 1650.78,
 			"status": "Processing"
 		}
+		
 	~ Response:
 
 		{
 			"order_id": "ORD564-567",
 			"status": "Processing"
 		}
+		
 2️⃣ Get Order Status
+
 	~ Endpoint: curl -X GET http://127.0.0.1:8000/api/orders/<order_id>/status/
 				eg http://127.0.0.1:8000/api/orders/ORD564-567/status/
+				
 	~ Response:
 
 		{
 			"order_id": "ORD564-567",
 			"status": "Completed"
 		}
+		
 3️⃣ Get All Order IDs
+
 	~ Endpoint: curl -X GET http://127.0.0.1:8000/api/orders/ids/
+	
 	~ Response:
 
 		[
@@ -104,8 +115,11 @@ ecommerce/                  # Main Django project
 				"order_id": "ORD024-697"
 			},
 		]
+		
 4️⃣ Get Order Metrics
+
 	~ Endpoint: GET api/metrics/
+	
 	~ Response:
 
 		{
@@ -179,4 +193,5 @@ ecommerce/                  # Main Django project
 
 ✨ Author
 	Aditya Kumar
+	
 	GitHub: @aDiTyA-2712 (https://github.com/aDiTyA-2712/)

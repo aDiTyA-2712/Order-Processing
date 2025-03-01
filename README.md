@@ -192,6 +192,7 @@ The **Order Processing System** is a backend service designed to handle order cr
 			- Open a PR.
 
 ✨ Author
-	Aditya Kumar
+
+- Aditya Kumar
 	
-	GitHub: @aDiTyA-2712 (https://github.com/aDiTyA-2712/)
+- GitHub: @aDiTyA-2712 (https://github.com/aDiTyA-2712/)
